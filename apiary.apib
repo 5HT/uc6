@@ -42,7 +42,7 @@ HOST: https://uc6.ehealth.gov.ua
 
 + Request (application/json)
     + Parameters
-        + id: `a48cc83a-7aad-47c6-9487-2a566dc669a7` (string, required)
+        + `id`: `a48cc83a-7aad-47c6-9487-2a566dc669a7` (string, required)
         + `status` (string, required)
         + `changed_at` (string, required)
 
@@ -90,10 +90,10 @@ HOST: https://uc6.ehealth.gov.ua
 + `qr` (string, required)
 
 ## ValidationError (Error)
-- type: `validation_error` (fixed)
-- message: `Validation failed` (string, required)
-- errors (object, required)
+- `type`: `validation_error` (fixed)
+- `message`: `Validation failed` (string, required)
+- `errors` (object, required)
 
 ## Error (object)
-+ type: `example_error` (string, required) - Machine-readable error type
-+ message: `Example error message` (string, required) - Human-readable error description
++ `type`: `example_error` (string, required) - Machine-readable error type
++ `message`: `Example error message` (string, required) - Human-readable error description
