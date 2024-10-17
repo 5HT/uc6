@@ -7,7 +7,7 @@ HOST: https://uc6.ehealth.gov.ua
 
 International Electronic Prescriptions (Use Case 6).
 
-### Create Prescription [POST /api/prescriptions]
+## Create Prescription [POST /api/prescriptions]
 
 + Request (application/json)
     + Attributes (`Prescription`)
@@ -24,7 +24,7 @@ International Electronic Prescriptions (Use Case 6).
 + Response 500 (application/json)
     + Attributes (`Error`)
 
-### Send Prescription to EUDI Wallet [POST /api/prescriptions/{id}/change]
+## Send Prescription to EUDI Wallet [POST /api/prescriptions/{id}/change]
 
 This method sends electronic prescription to National Diia operator
 that communicates directly with EUDI Wallet and contains sensitive
@@ -43,7 +43,7 @@ passport information.
 + Response 500 (application/json)
     + Attributes (`Error`)
 
-### Update Prescription [POST /api/prescriptions/{id}/change]
+## Update Prescription [POST /api/prescriptions/{id}/change]
 
 + Request (application/json)
     + Attributes
@@ -59,7 +59,7 @@ passport information.
 + Response 500 (application/json)
     + Attributes (`Error`)
 
-### Qualify Prescription [GET /api/prescriptions/{id}]
+## Qualify Prescription [GET /api/prescriptions/{id}]
 
 + Request (application/json)
     + Attributes
