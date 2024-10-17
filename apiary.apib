@@ -12,6 +12,9 @@ International Electronic Prescriptions (Use Case 6).
 + Request (application/json)
     + Attributes (`Prescription`)
 
++ Response 200 (application/json)
+    + Attributes (`Prescription`)
+
 + Response 201 (application/json)
     + Attributes (`Prescription`)
 
@@ -28,9 +31,9 @@ International Electronic Prescriptions (Use Case 6).
 
 + Request (application/json)
     + Attributes
-        + `id`: `a48cc83a-7aad-47c6-9487-2a566dc669a7` (string, required)
-        + `status` (string, required)
-        + `changed_at` (string, required)
+        + `id`: `a48cc83a-7aad-47c6-9487-2a566dc669a7` (string, required) - Prescription Internal Identifier
+        + `status`: active, dispensed, expired, declined (enum, required) - Prescription Status
+        + `changed_at`: `2024-02-31T15:59:60-08:00` (string, optional) - Datetime in RFC 3339
 
 + Response 200 (application/json)
     + Attributes (`Prescription`)
@@ -44,7 +47,7 @@ International Electronic Prescriptions (Use Case 6).
 
 + Request (application/json)
     + Attributes
-        + `id`: `a48cc83a-7aad-47c6-9487-2a566dc669a7` (string, required)
+        + `id`: `a48cc83a-7aad-47c6-9487-2a566dc669a7` (string, required) - Identifier of Prescription
 
 + Response 200 (application/json)
     + Attributes (`Prescription`)
@@ -57,23 +60,23 @@ International Electronic Prescriptions (Use Case 6).
 # Data Structures
 
 ## Prescription (object)
-+ `id`: `d290f1ee-6c54-4b01-90e6-d701748f0851` (string, required) - Identifier of person that is accosiated with user who initiated access token generation
-+ `request_number` (string, required)
++ `id`: `d290f1ee-6c54-4b01-90e6-d701748f0851` (string, required) - Identifier of Prescription
++ `request_number`: `M90H96.0` (string, required)
 + `status`: active, dispensed, expired, declined (enum, required)
-+ `created_at`: `2024-08-07 11:03:20.128570` (string, optional)
-+ `dispense_valid_from` (string, optional)
-+ `hospital_name` (string, required)
-+ `employee_name` (string, required)
-+ `patient_id` (number, required)
-+ `rnokpp` (number, required)
-+ `unzr` (number, required)
-+ `patient_name` (number, required)
-+ `patient_age` (number, required)
-+ `medicine` (string, required)
-+ `medication_qty` (string, required)
-+ `dosage_instruction` (string, required)
++ `created_at`: `2024-02-31T15:59:60-08:00` (string, optional) - Datetime in RFC 3339
++ `dispense_valid_from`: `2024-02-31T15:59:60-08:00` (string, optional) - Datetime in RFC 3339
++ `hospital_name` (string, required) - Human-readable Hospital name
++ `employee_name` (string, required) - Human-readable Employee name
++ `patient_id` (number, required) - Patient ID in EHCS
++ `rnokpp` (number, required) — Ukrainian National Tax Id
++ `unzr` (number, required) — Ukrainian National Person Id
++ `patient_name` (number, required) - Human-readable Patient name
++ `patient_age` (number, required) - Patient age
++ `medicine` (string, required) - Prescription Object
++ `medication_qty` (string, required) - Prescribed Quantity
++ `dosage_instruction` (string, required) - Dosage Instructions
 + `sign` (string, required) - ASN.1 DER ContentInfo/SignedData encoded in Base64
-+ `qr` (string, required)
++ `qr` (string, required) - QR code information
 
 ## ValidationError (Error)
 - `type`: `validation_error` (fixed)
