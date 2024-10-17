@@ -1,13 +1,13 @@
 FORMAT: 1A
 HOST: https://uc6.ehealth.gov.ua
 
-# Prescription
+# UC6 Potential
 
 ## International ePrescriptions
 
 International Electronic Prescriptions (Use Case 6).
 
-## Create Prescription [POST /api/prescriptions]
+### Create Prescription [POST /api/prescriptions]
 Allocate and create electronic prescription at the edge near EHCS.
 + Request (application/json)
     + Attributes (`Prescription`)
@@ -24,7 +24,23 @@ Allocate and create electronic prescription at the edge near EHCS.
 + Response 500 (application/json)
     + Attributes (`Error`)
 
-## Send Prescription to EUDI [POST /api/prescriptions/{id}/change]
+### Update Prescription [POST /api/prescriptions/{id}/change]
+Change status of electronic prescription.
++ Request (application/json)
+    + Attributes
+        + `id`: `a48cc83a-7aad-47c6-9487-2a566dc669a7` (string, required) - Prescription Internal Identifier
+        + `status`: active, dispensed, expired, declined (enum, required) - Prescription Status
+        + `changed_at`: `2024-02-31T15:59:60-08:00` (string, optional) - Datetime in RFC 3339
+
++ Response 200 (application/json)
+    + Attributes (`Prescription`)
+
++ Response 204
+
++ Response 500 (application/json)
+    + Attributes (`Error`)
+
+### Send Prescription to EUDI [POST /api/prescriptions/{id}/change]
 This method sends electronic prescription to National Diia operator
 that communicates directly with EUDI Wallet and contains sensitive
 passport information.
@@ -41,23 +57,7 @@ passport information.
 + Response 500 (application/json)
     + Attributes (`Error`)
 
-## Update Prescription [POST /api/prescriptions/{id}/change]
-Change status of electronic prescription.
-+ Request (application/json)
-    + Attributes
-        + `id`: `a48cc83a-7aad-47c6-9487-2a566dc669a7` (string, required) - Prescription Internal Identifier
-        + `status`: active, dispensed, expired, declined (enum, required) - Prescription Status
-        + `changed_at`: `2024-02-31T15:59:60-08:00` (string, optional) - Datetime in RFC 3339
-
-+ Response 200 (application/json)
-    + Attributes (`Prescription`)
-
-+ Response 204
-
-+ Response 500 (application/json)
-    + Attributes (`Error`)
-
-## Qualify Prescription [GET /api/prescriptions/{id}]
+### Qualify Prescription [GET /api/prescriptions/{id}]
 Retrieve actual validated information about electronic prescription.
 + Request (application/json)
     + Attributes
