@@ -30,7 +30,7 @@ Change status of electronic prescription.
     + Attributes
         + `id`: `a48cc83a-7aad-47c6-9487-2a566dc669a7` (string, required) - Prescription Internal Identifier
         + `status`: active, dispensed, expired, declined (enum, required) - Prescription Status
-        + `changed_at`: `2024-02-31T15:59:60-08:00` (string, optional) - Datetime in RFC 3339
+        + `requested_at`: `2024-02-31T15:59:60-08:00` (string, optional) - Datetime in RFC 3339
 
 + Response 200 (application/json)
     + Attributes (`Prescription`)
@@ -78,6 +78,7 @@ Retrieve actual validated information about electronic prescription.
 + `request_number`: `M90H96.0` (string, required)
 + `status`: active, dispensed, expired, declined (enum, required)
 + `created_at`: `2024-02-31T15:59:60-08:00` (string, optional) - Datetime in RFC 3339
++ `changed_at`: `2024-02-31T15:59:60-08:00` (string, optional) - Datetime in RFC 3339
 + `dispense_valid_from`: `2024-02-31T15:59:60-08:00` (string, optional) - Datetime in RFC 3339
 + `hospital_name` (string, required) - Human-readable Hospital name
 + `employee_name` (string, required) - Human-readable Employee name
