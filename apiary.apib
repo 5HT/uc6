@@ -15,14 +15,30 @@ International Electronic Prescriptions (Use Case 6).
 + Response 200 (application/json)
     + Attributes (`Prescription`)
 
-+ Response 201 (application/json)
-    + Attributes (`Prescription`)
-
 + Response 400 (application/json)
     + Attributes (`Error`)
 
 + Response 422 (application/json)
     + Attributes (`ValidationError`)
+
++ Response 500 (application/json)
+    + Attributes (`Error`)
+
+### Send Prescription to EUDI Wallet [POST /api/prescriptions/{id}/change]
+
+This method sends electronic prescription to National Diia operator
+that communicates directly with EUDI Wallet and contains sensitive
+passport information.
+
++ Request (application/json)
+    + Attributes
+        + `id`: `a48cc83a-7aad-47c6-9487-2a566dc669a7` (string, required) - Prescription Internal Identifier
+        
++ Response 200 (application/json)
+    + Attributes (`Prescription`)
+        + `sent_at`: `2024-02-31T15:59:60-08:00` (string, optional) - Datetime in RFC 3339
+
++ Response 204
 
 + Response 500 (application/json)
     + Attributes (`Error`)
