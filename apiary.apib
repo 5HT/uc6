@@ -28,10 +28,6 @@ Allocate and create electronic prescription at the edge near EHCS.
 
 ## Send Prescription to EUDI [POST /api/prescriptions/{id}/change]
 
-This method sends electronic prescription to National Diia operator
-that communicates directly with EUDI Wallet and contains sensitive
-passport information.
-
 + Request (application/json)
     + Attributes
         + `id`: `a48cc83a-7aad-47c6-9487-2a566dc669a7` (string, required) - Prescription Internal Identifier
@@ -45,9 +41,11 @@ passport information.
 + Response 500 (application/json)
     + Attributes (`Error`)
 
-## Update Prescription [POST /api/prescriptions/{id}/change]
+This method sends electronic prescription to National Diia operator
+that communicates directly with EUDI Wallet and contains sensitive
+passport information.
 
-Change status of electronic prescription.
+## Update Prescription [POST /api/prescriptions/{id}/change]
 
 + Request (application/json)
     + Attributes
@@ -62,6 +60,8 @@ Change status of electronic prescription.
 
 + Response 500 (application/json)
     + Attributes (`Error`)
+
+Change status of electronic prescription.
 
 ## Qualify Prescription [GET /api/prescriptions/{id}]
 
