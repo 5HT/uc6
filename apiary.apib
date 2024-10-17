@@ -21,8 +21,7 @@ Allocate and create electronic prescription at the edge near EHCS.
 + Response 422 (application/json)
     + Attributes (`ValidationError`)
 
-+ Response 500 (application/json)
-    + Attributes (`Error`)
++ Response 500
 
 ### Update Prescription [POST /api/prescriptions/{id}/change]
 Change status of electronic prescription.
@@ -35,10 +34,10 @@ Change status of electronic prescription.
 + Response 200 (application/json)
     + Attributes (`Prescription`)
 
-+ Response 204
-
-+ Response 500 (application/json)
++ Response 204 (application/json)
     + Attributes (`Error`)
+
++ Response 500
 
 ### Send Prescription to EUDI [POST /api/prescriptions/{id}/change]
 Send electronic prescription to National Diia operator
@@ -52,10 +51,10 @@ passport information.
     + Attributes (`Prescription`)
         + `sent_at`: `2024-02-31T15:59:60-08:00` (string, optional) - Datetime in RFC 3339
 
-+ Response 204
-
-+ Response 500 (application/json)
++ Response 204 (application/json)
     + Attributes (`Error`)
+
++ Response 500
 
 ### Qualify Prescription [GET /api/prescriptions/{id}]
 Retrieve actual validated information about electronic prescription.
@@ -66,10 +65,10 @@ Retrieve actual validated information about electronic prescription.
 + Response 200 (application/json)
     + Attributes (`Prescription`)
 
-+ Response 204
-
-+ Response 500 (application/json)
++ Response 204 (application/json)
     + Attributes (`Error`)
+
++ Response 500
 
 # Data Structures
 
